@@ -7,6 +7,7 @@
   --moon-color: ivory;
   --egg-color: brown;
   --eye-color: #fff;
+  --tear-color: #e6edf0;
 }
 /* --container contains everything */
 body {
@@ -113,28 +114,93 @@ body {
   justify-content: space-evenly;
 }
 .eye {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
+  border: 1px solid #000;
   background-color: var(--eye-color);
   position: relative;
 }
-.eye::after {
+.eye-iris-plane {
+  background-color: transparent;
+  height: 15%;
+  width: 47%;
   position: absolute;
+  top: 17%;
+  left: 26.5%;
+  display: flex;
+  justify-content: space-between;
+}
+.eye-iris1, .eye-iris2{
   content: '';
   background-color: #000;
-  height: 20px;
-  width: 20px;
+  height: 28px;
+  width: 28px;
   border-radius: 50%;
-  top: 10px;
-  /* transform: scale(5%); */
+  top: 0px;
+  position: relative;
 }
-.eye::before {
+  .eye-iris1::after, .eye-iris2::after{
   position: absolute;
   content: '';
-  /* background-color: white; */
-  /* transform: scale(5%); */
+  background-color: #fff;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: 10px;
+} 
+.eye-iris1::after{
+  top: 4px;
+  left: 15px;
+} 
+.eye-iris2::after{
+  top: 5px;
+  left: 1px;
+} 
+ .eye-iris1::before, .eye-iris2::before {
+  position: absolute;
+  content: '';
+} 
+.tears-plane{
+  background-color: transparent;
+  height: 15%;
+  width: 47%;
+  position: absolute;
+  top: 20%;
+  left: 26.5%;
+  display: flex;
+  justify-content: space-between;
 }
+.tear1, .tear2{
+  content: '';
+  background-color: #fff;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 0px;
+  border: 1px solid #000;
+  position: relative;
+}
+.tear1::after, .tear2::after{
+  position: absolute;
+  content: '';
+  background-color: var(--tear-color);
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+} 
+.tear1::after{
+  right: 11px;
+  top: 2px;
+}
+.tear2::after{
+  left: 11px;
+  top: 2px;
+}
+.tear1::before, .tear2::before {
+  position: absolute;
+  content: '';
+} 
 .mouth {
 }
 /* ground contains groundBumps */
