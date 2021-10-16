@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --all-border: 2px solid #000;
+  --sky-color: lightblue;
+  --moon-color: ivory;
+  --egg-color: brown;
+  --eye-color: #fff;
+}
+/* --container contains everything */
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* sky contains moon, skyBumps and stars */
+.darkSky {
+  /* border: var(--all-border); */
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: var(--sky-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+}
+.moon {
+  /* border: var(--all-border); */
+  position: relative;
+  background-color: var(--sky-color);
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  left: 80%;
+  /* box-shadow: 0 10px 15px rgba(0, 0, 0, 1); */
+}
+.moon::before {
+  /* background-color: var(--moon-color); */
+  content: '';
+  position: absolute;
+  /* top: 50px; */
+  left: 60%;
+  height: 150px;
+  width: 125px;
+  border-radius: 50%;
+  box-shadow: 0px 70px 0px var(--moon-color);
+  transform: rotate(60deg);
+}
+.moon::after {
+  /* content: ""; */
+  position: absolute;
+  background-color: var(--sky-color);
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+}
+.AllSkyBumps {
+  /* border: var(--all-border); */
+  display: flex;
+  /* background-color: transparent; */
+  height: 15%;
+  width: 100vw;
+  position: absolute;
+  top: 95%;
+}
+.skyBump {
+  /* border: var(--all-border); */
+  height: 100%;
+  flex-grow: 1;
+  background-color: var(--sky-color);
+  border-bottom-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+}
+.stars {
+}
+/* eggSpace contains lonelyEgg */
+.eggSpace {
+  /* border: var(--all-border); */
+  flex-grow: 3;
+  flex-shrink: 3;
+  background-color: #fff;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+}
+.lonelyEgg {
+  position: absolute;
+  height: 300px;
+  width: 250px;
+  background-color: var(--egg-color);
+  top: 40%;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform: rotate(20deg);
+}
+.eye-plane {
+  background-color: transparent;
+  height: 15%;
+  width: 80%;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.eye {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: var(--eye-color);
+  position: relative;
+}
+.eye::after {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  top: 10px;
+  /* transform: scale(5%); */
+}
+.eye::before {
+  position: absolute;
+  content: '';
+  /* background-color: white; */
+  /* transform: scale(5%); */
+}
+.mouth {
+}
+/* ground contains groundBumps */
+.ground {
+  background-color: sandybrown;
+  /* border: var(--all-border); */
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.groundBumps {
+  /* border: var(--all-border); */
+  display: flex;
+  /* background-color: transparent; */
+  height: 15%;
+  width: 100vw;
+  position: absolute;
+  top: 95%;
+}
