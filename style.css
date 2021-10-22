@@ -156,7 +156,7 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.eye {
+.eye1, .eye2 {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -164,90 +164,40 @@ body {
   background-color: var(--eye-color);
   position: relative;
 }
-.eye-iris-plane {
-  background-color: transparent;
-  height: 15%;
-  width: 47%;
+.eye1::before, .eye2::before{
   position: absolute;
-  top: 17%;
-  left: 26.5%;
-  display: flex;
-  justify-content: space-between;
-}
-.eye-iris1,
-.eye-iris2 {
-  content: '';
+  content: "";
   background-color: #000;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  top: 0px;
-  position: relative;
-}
-.eye-iris1::after,
-.eye-iris2::after {
-  position: absolute;
-  content: '';
-  background-color: #fff;
-  height: 10px;
-  width: 10px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
-.eye-iris1::after {
-  top: 4px;
-  left: 15px;
-}
-.eye-iris2::after {
-  top: 5px;
+.eye1::before {
+   top: 2px; 
   left: 1px;
 }
-.eye-iris1::before,
-.eye-iris2::before {
-  position: absolute;
-  content: '';
+.eye2::before {
+  top: 2px;
+  left: 2px;
+  box-shadow: -85px 4px 0 -12px #fff, -72px 4px 0 -13px #fff,
+  -100px 9px 0 -8px #fff;
 }
-.tears-plane {
-  background-color: transparent;
-  height: 15%;
-  width: 47%;
+.eye1::after, .eye2::after{
   position: absolute;
-  top: 20%;
-  left: 26.5%;
-  display: flex;
-  justify-content: space-between;
-}
-.tear1,
-.tear2 {
-  content: '';
+  content: "";
   background-color: #fff;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  top: 0px;
+  height: 8px;
+  width: 13px;
+  border-radius: 60% 60% 50% 50%;
   border: 1px solid #000;
-  position: relative;
 }
-.tear1::after,
-.tear2::after {
-  position: absolute;
-  content: '';
-  background-color: var(--tear-color);
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
+.eye1::after {
+   top: 4px;
+   left: 11px;
 }
-.tear1::after {
-  right: 11px;
-  top: 2px;
-}
-.tear2::after {
-  left: 11px;
-  top: 2px;
-}
-.tear1::before,
-.tear2::before {
-  position: absolute;
-  content: '';
+.eye2::after {
+  top: 4px;
+  left: 9px;
 }
 .mouth {
   position: absolute;
