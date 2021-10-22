@@ -37,6 +37,7 @@
   --eye-color: #fff;
   --tear-color: #e6edf0;
   --mud-color: #70543e;
+  --dress-color: #01a0a0;
 }
 /* --container contains everything */
 body {
@@ -67,20 +68,15 @@ body {
   z-index: 0;
 }
 .moon {
-  /* border: var(--all-border); */
   position: relative;
-  background-color: var(--sky-color);
   height: 125px;
   width: 125px;
   border-radius: 50%;
   left: 80%;
-  /* box-shadow: 0 10px 15px rgba(0, 0, 0, 1); */
 }
 .moon::before {
-  /* background-color: var(--moon-color); */
   content: '';
   position: absolute;
-  /* top: 50px; */
   left: 60%;
   height: 150px;
   width: 125px;
@@ -89,12 +85,8 @@ body {
   transform: rotate(60deg);
 }
 .moon::after {
-  /* content: ""; */
+  content: "";
   position: absolute;
-  background-color: var(--sky-color);
-  height: 125px;
-  width: 125px;
-  border-radius: 50%;
 }
 .AllSkyBumps {
   /* border: var(--all-border); */
@@ -133,7 +125,26 @@ body {
   background-color: var(--egg-color);
   top: 40%;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  transform: rotate(20deg);
+  /* transform: rotate(20deg); */
+}
+.lonelyEgg::before{
+  content: "";
+  position: absolute;
+  height: 160px;
+  width: 250px;
+  background-color: var(--dress-color);
+  top: 47%;
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+}
+.lonelyEgg::after{
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 10px;
+  background-color: var(--dress-color);
+  top: 32%;
+  left: 6%;
+  box-shadow: 210px 0 0 var(--dress-color);
 }
 .eye-plane {
   background-color: transparent;
@@ -243,7 +254,7 @@ body {
   background-color: #000;
   width: 20px;
   height: 1px;
-  top: 46%;
+  top: 42%;
   left: 46%;
 }
 /* ground contains groundBumps */
